@@ -15,11 +15,11 @@ sorted in ascending order.
 '''
 # Method 1 - O(nlogn) time | O(n) space
 def sortedSquare(array):
-    newArr = []
-    for value in array:
-        newArr.append(value * value)
-    newArr.sort()
-    return newArr
+    newArray = []
+    for values in array:
+        newArray.append(values * values)
+    newArray.sort()
+    return newArray
 
 '''
 1. Initialize array of zeros with size of main array
@@ -31,19 +31,19 @@ def sortedSquare(array):
 '''
 # Method 2 - O(n) Time | O(n) Space
 def sortedSquare1(array):
-    newArr = [0 for _ in array]
+    newArray = [0 for _ in array]
     smallIndex = 0
     largeIndex = len(array) - 1
     for idx in reversed(range(len(array))):
         smallvalue = array[smallIndex]
         largevalue = array[largeIndex]
         if abs(smallvalue) > abs(largevalue):
-            newArr[idx] = smallvalue * smallvalue
+            newArray[idx] = smallvalue * smallvalue
             smallIndex += 1
         else:
-            newArr[idx] = largevalue * largevalue
+            newArray[idx] = largevalue * largevalue
             largeIndex -= 1
-    return newArr
+    return newArray
 
 print(sortedSquare([-4, -2, -1, 0, 2, 5, 8, 19]))
 print(sortedSquare1([-4, -2, -1, 0, 2, 5, 8, 19]))
